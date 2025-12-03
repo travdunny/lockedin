@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <title>LockedIn Generator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+<body>
+
+    <div id="titlebar">
+        <h3>Lucite Government Foreign Aid and Humanitarian Services</h3>
+        <p>LockedIn Generator</p>
+    </div>
+
+    <div class="page_element">
+        <p>This website is for generating posts in the 'LockedIn' format which is a spoof of LinkedIn. Unlike LinkedIn posts, this includes a small side bar for some profile details.</p>
+        <p><i>Made for the benefit of the world by _Travis.</i></p>
+        <br>
+        <p><b>Security note:</b> This website operates client-side but, you know, don't upload personal stuff.</p>
+        <hr>
+        <br>
+        <h3>Customise your LockedIn post:</h3>
+
+        <div id="settings_box">
+            <form onsubmit="return updateFields();" style="display:flex;gap:20px;flex-wrap:wrap;">
+                <div class="settings-div">
+                    <h3>Personal details</h3>
+                    <label for="username_form">Username</label><br>
+                    <input type="text" id="username_form" placeholder="_Travis"><br>
+
+                    <label for="byline_form">Byline</label><br>
+                    <input type="text" id="byline_form" placeholder="Software Developer at Locked In"><br>
+                    
+                    <label for="locality_form">Locality</label><br>
+                    <input type="text" id="locality_form" placeholder="Hamilton, Lucite">
+                <br>
+                </div>
+
+                <div class="settings-div">
+                    <h3>Options</h3>
+                    <input type="checkbox" id="verified_form" value="isverified">
+                    <label for="verified_form">Verified</label><br><br>
+
+                    <label for="likes_count_form">Likes</label><br>
+                    <input type="number" id="likes_count_form" placeholder="67"><br>
+                    <button type="button" id="rand_likes" onclick="randomLikes()">Random</button><br>
+
+                    <label for="age_form">Post age (hours)</label><br>
+                    <input type="number" id="age_form" placeholder="1" max="23" min="0"><br><br>
+
+                    <label for="company_name_form">Company name and image (optional)</label><br>
+                    <input type="text" id="company_name_form" placeholder="LockedIn"><br>
+                    <input type="file" id="companypic_form"><br>
+
+                    <label for="education_name_form">University name and image (optional)</label><br>
+                    <input type="text" id="uni_name_form" placeholder="University of Lucite"><br>
+                    <input type="file" id="unipic_form">
+
+                </div>
+
+                <div class="settings-div">
+                    <h3>Images</h3>
+                    <label for="pfp_form">Profile picture</label><br>
+                    <input type="file" id="pfp_form" accept="image/*"><br>
+
+                    <label for="headpic_form">User header picture</label><br>
+                    <input type="file" id="headpic_form"><br><br>
+
+                    <label for="postpic_form">Post picture (optional)</label><br>
+                    <input type="file" id="postpic_form">
+
+                    <button type="button" id="clear_pic" onclick="clearUploadPic()">Clear</button>
+                </div>
+
+                <div class="settings-div">
+                    <h3>Post text</h3>
+                    <label for="post_text_form">Post text</label><br>
+                    <textarea id="post_text_form" rows=5 cols=50>Your post text...</textarea>
+                </div>
+
+                <div class="settings-div">
+                    <input type="submit" value="Done">
+                    <button type="button" onclick="window.location.reload()">Reset</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+    <div id="output_container">
+        <div id="output_head">
+            <img src="favicon.png" width="35px" style="margin-right: 20px;">
+            <img src="searchico.png" height="25px">
+            <img src="menubar.png" height="35px" style="margin-left:auto;">
+        </div>
+
+        <div style="padding:10px;display:flex;gap:10px;">
+            <div class="container", id="personal_box">
+                <div id="header_picture"></div>
+                <div id="pfp"></div>
+                <div id="pb_text">
+                    <div style="display: flex;align-items: center;">
+                        <h2 class="user_name">Firstname Lastname</h2>
+                        <img id="verified-badge-alt" src="verifiedicon.png" style="margin-left: 7px;min-width:20px;height:20px;">
+                    </div>
+                    <p class="byline">Position at Company</p>
+                    <p id="locality", class="subtitle">City, Country</p>
+
+                    <div id="company_tag">
+                        <div id="company_pic"></div>
+                        <div>
+                            <b><p id="company_name">Company Name</p></b>
+                        </div>
+                    </div>
+
+                    <div id="uni_tag">
+                        <div id="uni_pic"></div>
+                        <div>
+                            <b><p id="uni_name">University Name</p></b>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container", id="post_box">
+                <div id="post_head">
+                    <div id="pfp_alt"></div>
+                    <div>
+                        <div style="display:flex;align-items: center;">
+                            <h2 class="user_name">Firstname Lastname</h2>
+                            <img id="verified-badge" src="verifiedicon.png" width="20px" style="margin-left: 7px;">
+                        </div>
+                        <p class="subtitle byline">Position at Company</p>
+                        <p id="time", class="subtitle">X h</p>
+                    </div>
+                </div>
+
+                <p id="post_text">Post text...</p>
+
+                <img id="post_image" src="ph_pic.png">
+
+                <div id="post_base">
+
+                    <div style="display:flex;align-items:center;">
+                        <img id='likes_icon' src="likesbutton.png" height="20px">
+                        <p id="like_counter" class="subtitle">100</p>
+                    </div>
+
+                    <hr>
+
+                    <div style="text-align: center;">
+                        <img src="interactions.png" width="90%" style="margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page_element">
+        <div id="download_box">
+            <form onsubmit="return downloadOutput();">
+                <input type="submit" value="Download!" id="download_btn">
+            </form>
+        </div>
+    </div>
+
+    <div class="page_element" id="testimonials" style="text-align: center;margin-top:50px;">
+        <h3>View our testimonials!</h3><br>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content: center;">
+            <img src="test_1.png" class="testimg">
+            <img src="test_2.png" class="testimg">
+            <img src="test_3.png" class="testimg">
+            <img src="test_4.png" class="testimg">
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* Global settings/one-off elements */
+
+body {
+    font-family: sans-serif;
+    margin:0;
+    padding:0;
+    line-height: 1.25;
+    background-color: #eeeeee;
+}
+
+p {
+    font-size: 1em;
+}
+
+p,h1,h2,h3 {
+    margin: 2px 0 2px 0;
+    padding: 0;
+}
+
+#titlebar {
+    background-color: #232ed5;
+    color: white;
+    padding: 5px 5% 5px 5%;
+}
+
+.page_element {
+    padding: 5px 5% 5px 5%;
+}
+
+/* Settings UI */
+
+#settings_box {
+    padding: 20px;
+    background-color: white;
+}
+
+.settings-div {
+    border: solid 1px gray;
+    padding: 10px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+#download_box {
+    margin: auto;
+    width: 200px;
+    text-align: center;
+}
+
+#download_btn {
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.testimg {
+    max-height: 200px;
+}
+
+/* Output elements */
+
+#output_container {
+    background-color: #f4f2ee;
+    margin: 50px auto 50px auto;
+    width: 800px;
+}
+
+#output_head {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px 10px 30px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-color: #dfdeda;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    overflow: hidden;
+    height: min-content;
+}
+
+
+/* Personal box items */
+
+#personal_box {
+    flex: 30%;
+}
+
+#pb_text {
+    margin: 20px;
+}
+
+#header_picture {
+    background-color: pink;
+    height: 100px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#post_box {
+    flex: 70%;
+}
+
+.user_name {
+    font-size: 1.5em;
+    word-break: normal;
+}
+
+#pfp {
+    background-color: pink;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 15px;
+    background-size: cover;
+    border: solid white 5px;
+}
+
+#pfp_alt {
+    background-color: pink;
+    border-radius: 100%;
+    min-width: 65px;
+    height: 65px;
+    background-size: cover;
+    margin: 5px 15px 5px 5px;
+}
+
+#company_tag, #uni_tag {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#company_name, #uni_name {
+    word-break: normal;
+}
+
+#company_pic, #uni_pic {
+    width: 30px;
+    height: 30px;
+    background-color: pink;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    min-width: 30px;
+}
+
+/* Post box items */
+
+#post_head {
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    line-height: 1;
+    align-items: center;
+}
+
+#post_text {
+    margin: 5px 20px 20px 20px;
+    font-size: 1.5em;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+#post_base {
+    padding: 10px 20px 10px 20px;
+}
+
+.subtitle {
+    color: gray;
+    font-size: 1.25em;
+    word-break: normal;
+}
+
+#post_image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.byline {
+    font-size: 1.25em;
+    word-break: normal;
+}
+
+#likes_icon {
+    margin-right: 5px;
+}
+
+hr {
+    margin: 5px 0 5px 0;
+    border: none;
+    background-color: lightgray;
+    height: 1px;
+}
