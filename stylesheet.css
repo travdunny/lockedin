@@ -35,7 +35,7 @@ p,h1,h2,h3 {
 }
 
 .settings-div {
-    border: solid 1px gray;
+    border: solid 2px #232ed5;
     padding: 10px;
     border-radius: 10px;
     flex-grow: 1;
@@ -54,6 +54,40 @@ p,h1,h2,h3 {
 
 .testimg {
     max-height: 200px;
+}
+
+button, input[type=submit] {
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    margin: 5px 0 5px 0;
+}
+
+button {
+    background-color: white;
+    border: solid 2px black;
+    color: black;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+button:active, input[type=submit]:active {
+    text-decoration: underline;
+}
+
+input[type=submit] {
+    background-color: #232ed5;
+    border: solid 2px #232ed5;
+    color: white;
+}
+
+input[type=submit]:hover {
+    background-color: orange;
+    color: black;
+    border: 2px solid orange;
 }
 
 /* Output elements */
@@ -81,6 +115,10 @@ p,h1,h2,h3 {
     height: min-content;
 }
 
+.verified {
+    margin-left: 7px;min-width:20px;min-height: 20px;max-height: 20px;
+}
+
 
 /* Personal box items */
 
@@ -93,7 +131,8 @@ p,h1,h2,h3 {
 }
 
 #header_picture {
-    background-color: lightgray;
+    background-color: white;
+    background-image: url(ph_header.png);
     height: 100px;
     width: 100%;
     background-size: cover;
@@ -110,7 +149,8 @@ p,h1,h2,h3 {
 }
 
 #pfp {
-    background-color: lightgray;
+    background-color: white;
+    background-image: url('blankpfp.png');
     border-radius: 100%;
     width: 100px;
     height: 100px;
@@ -120,7 +160,8 @@ p,h1,h2,h3 {
 }
 
 #pfp_alt {
-    background-color: lightgray;
+    background-color: white;
+    background-image: url('blankpfp.png');
     border-radius: 100%;
     min-width: 65px;
     height: 65px;
@@ -142,7 +183,8 @@ p,h1,h2,h3 {
 #company_pic, #uni_pic {
     width: 30px;
     height: 30px;
-    background-color: lightgray;
+    background-color: white;
+    background-image: url(company_ph.png);
     background-size: cover;
     background-position: center;
     border-radius: 3px;

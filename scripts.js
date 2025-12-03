@@ -133,7 +133,7 @@ function makeCompanyTag(name,pic,pic_tag,name_tag) {
         var blobURL = URL.createObjectURL(pic[0]);
         pic_tag.style.backgroundImage = `url(${blobURL})`;
     } else {
-        pic_tag.style.backgroundImage = 'url(ph_pic.png)';
+        pic_tag.style.backgroundImage = 'url(company_ph.png)';
     }
 
 }
