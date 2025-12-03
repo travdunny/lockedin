@@ -93,7 +93,7 @@ p,h1,h2,h3 {
 }
 
 #header_picture {
-    background-color: pink;
+    background-color: lightgray;
     height: 100px;
     width: 100%;
     background-size: cover;
@@ -110,7 +110,7 @@ p,h1,h2,h3 {
 }
 
 #pfp {
-    background-color: pink;
+    background-color: lightgray;
     border-radius: 100%;
     width: 100px;
     height: 100px;
@@ -120,7 +120,7 @@ p,h1,h2,h3 {
 }
 
 #pfp_alt {
-    background-color: pink;
+    background-color: lightgray;
     border-radius: 100%;
     min-width: 65px;
     height: 65px;
@@ -142,7 +142,7 @@ p,h1,h2,h3 {
 #company_pic, #uni_pic {
     width: 30px;
     height: 30px;
-    background-color: pink;
+    background-color: lightgray;
     background-size: cover;
     background-position: center;
     border-radius: 3px;
